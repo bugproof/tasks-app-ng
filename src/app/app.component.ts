@@ -1,13 +1,33 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { Task } from './types';
+import {RouterOutlet} from "@angular/router";
+import {TaskTableComponent} from "./task-table.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    TaskTableComponent
+  ]
 })
-export class AppComponent {
-  title = 'tasks-app-ng';
+export class AppComponent implements OnInit {
+  tasks: Task[] = [];
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.loadTasks();
+  }
+
+  loadTasks() {
+    this.http.get<Task[]>('assets/tasks.json').subscribe(
+      {
+        next: (tasks: Task[]) => {this.tasks = tasks;},
+        error: (err: Error) => {console.error('Error loading tasks:', err);}
+      }
+    );
+  }
 }

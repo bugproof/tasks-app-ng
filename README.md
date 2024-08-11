@@ -1,6 +1,7 @@
 # TasksAppNg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+![web view](s1.png)
+![mobile view](s2.png)
 
 ## Development server
 

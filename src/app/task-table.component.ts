@@ -78,7 +78,7 @@ import { Task } from './types';
                 <span class="truncate">{{ item.task.endDate | date:'MMM d' }}</span>
               </div>
               <div [ngClass]="cellClass">
-                <span class="px-2 py-1 rounded text-sm font-medium truncate" [ngClass]="{
+                <span class="mr-2 rounded text-sm font-medium truncate" [ngClass]="{
                   'text-rose-600': item.task.priority === 'HIGH',
                   'text-orange-500': item.task.priority === 'MEDIUM',
                   'text-gray-400': item.task.priority === 'NORMAL',

@@ -1,6 +1,14 @@
 
 <main class="w-full max-w-7xl mx-auto">
-  <app-task-table [tasks]="tasks"></app-task-table>
+  <!-- Web component -->
+  <div class="hidden lg:block">
+    <app-task-table [tasks]="tasks"></app-task-table>
+  </div>
+
+  <!-- Mobile component -->
+  <div class="lg:hidden">
+    <app-task-list-mobile [tasks]="tasks"></app-task-list-mobile>
+  </div>
 </main>
 
 <!--<router-outlet />-->

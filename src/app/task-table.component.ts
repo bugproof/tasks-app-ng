@@ -2,7 +2,7 @@ import {Component, Input, OnInit, Pipe, PipeTransform} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Task } from './types';
 
-
+// Web task list component
 @Component({
   selector: 'app-task-table',
   standalone: true,

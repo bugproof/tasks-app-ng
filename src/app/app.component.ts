@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Task } from './types';
 import {RouterOutlet} from "@angular/router";
 import {TaskTableComponent} from "./task-table.component";
+import {TaskListMobileComponent} from "./task-list-mobile.component";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import {TaskTableComponent} from "./task-table.component";
   standalone: true,
   imports: [
     RouterOutlet,
-    TaskTableComponent
+    TaskTableComponent,
+    TaskListMobileComponent
   ]
 })
 export class AppComponent implements OnInit {
